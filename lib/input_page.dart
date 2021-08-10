@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const bottomContainerHeight = 80.0;
+const activeColour = Color(0xFF1D1E33);
+
 class InputPage extends StatefulWidget {
   InputPage({Key? key}) : super(key: key);
 
@@ -23,12 +26,12 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReuseableCard(
-                    colour: Color(0xFF1D1E33),
+                    colour: activeColour,
                   ),
                 ),
                 Expanded(
                   child: ReuseableCard(
-                    colour: Color(0xFF1D1E33),
+                    colour: activeColour,
                   ),
                 ),
               ],
@@ -39,7 +42,7 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReuseableCard(
-                    colour: Color(0xFF1D1E33),
+                    colour: activeColour,
                   ),
                 ),
               ],
@@ -50,17 +53,30 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReuseableCard(
-                    colour: Color(0xFF1D1E33),
+                    colour: activeColour,
                   ),
                 ),
                 Expanded(
                   child: ReuseableCard(
-                    colour: Color(0xFF1D1E33),
+                    colour: activeColour,
                   ),
                 ),
               ],
             ),
           ),
+          Container(
+            color: Color(0xFFEB1555),
+            height: bottomContainerHeight,
+            width: double.infinity,
+            child: Center(
+              child: Text(
+                'Calulate Your BMI Here',
+                style: TextStyle(
+                  fontSize: 25.0,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
