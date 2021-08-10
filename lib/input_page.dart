@@ -5,6 +5,8 @@ import 'topCards.dart';
 
 const bottomContainerHeight = 80.0;
 const activeColour = Color(0xFF1D1E33);
+const inactiveColour = Color(0xFF111328);
+enum Gender { none, male, female }
 
 class InputPage extends StatefulWidget {
   InputPage({Key? key}) : super(key: key);
@@ -14,6 +16,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Gender selectedGender = Gender.none;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,19 +32,44 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReuseableCard(
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
                     childCard: TopCards(
                       icon: FontAwesomeIcons.mars,
                       label: 'MALE',
                     ),
-                    colour: activeColour,
+                    colour: selectedGender == Gender.male
+                        ? activeColour
+                        : inactiveColour,
                   ),
                 ),
                 Expanded(
                   child: ReuseableCard(
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
                     childCard: TopCards(
                       icon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
                     ),
+                    colour: selectedGender == Gender.female
+                        ? activeColour
+                        : inactiveColour,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: ReuseableCard(
                     colour: activeColour,
                   ),
                 ),
@@ -53,34 +81,11 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReuseableCard(
-                    childCard: TopCards(
-                      icon: FontAwesomeIcons.mars,
-                      label: 'MALE',
-                    ),
-                    colour: activeColour,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: ReuseableCard(
-                    childCard: TopCards(
-                      icon: FontAwesomeIcons.mars,
-                      label: 'MALE',
-                    ),
                     colour: activeColour,
                   ),
                 ),
                 Expanded(
                   child: ReuseableCard(
-                    childCard: TopCards(
-                      icon: FontAwesomeIcons.mars,
-                      label: 'MALE',
-                    ),
                     colour: activeColour,
                   ),
                 ),
