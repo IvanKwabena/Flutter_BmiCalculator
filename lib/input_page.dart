@@ -1,3 +1,5 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reuseableCard.dart';
@@ -175,6 +177,7 @@ class _InputPageState extends State<InputPage> {
                   child: ReuseableCard(
                     colour: kActiveColour,
                     childCard: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'AGE',
@@ -215,15 +218,20 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: Color(0xFFEB1555),
-            height: kBottomContainerHeight,
-            width: double.infinity,
-            child: Center(
-              child: Text(
-                'Calulate Your BMI Here',
-                style: TextStyle(
-                  fontSize: 25.0,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/first');
+            },
+            child: Container(
+              color: Color(0xFFEB1555),
+              height: kBottomContainerHeight,
+              width: double.infinity,
+              child: Center(
+                child: Text(
+                  'Calulate Your BMI Here',
+                  style: TextStyle(
+                    fontSize: 25.0,
+                  ),
                 ),
               ),
             ),
