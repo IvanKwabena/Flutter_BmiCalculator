@@ -16,6 +16,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender = Gender.none;
   int height = 190;
+  int weight = 60;
+  int age = 23;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,6 +69,7 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
+                // HEIGHT CARD
                 Expanded(
                   child: ReuseableCard(
                     colour: kActiveColour,
@@ -126,13 +129,87 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
+                  //BOTTOM LEFT CARD
                   child: ReuseableCard(
+                    childCard: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          style: kLabelStyleTop,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: kLabelStyleMiddle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                              iconData: FontAwesomeIcons.minus,
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                },
+                                iconData: FontAwesomeIcons.plus)
+                          ],
+                        )
+                      ],
+                    ),
                     colour: kActiveColour,
                   ),
                 ),
                 Expanded(
+                  //BOTTOM RIGHT CARD
                   child: ReuseableCard(
                     colour: kActiveColour,
+                    childCard: Column(
+                      children: [
+                        Text(
+                          'AGE',
+                          style: kLabelStyleTop,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kLabelStyleMiddle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                              iconData: FontAwesomeIcons.minus,
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                              iconData: FontAwesomeIcons.plus,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -153,6 +230,26 @@ class _InputPageState extends State<InputPage> {
           )
         ],
       ),
+    );
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  RoundIconButton({required this.onPressed, required this.iconData});
+  final Function() onPressed;
+  final IconData iconData;
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      fillColor: Color(0xFF4C4F5E),
+      child: Icon(iconData),
+      onPressed: onPressed,
+      shape: CircleBorder(),
+      constraints: BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
+      // splashColor: Color(0xFFEB1555),
     );
   }
 }
