@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
 
 class TopCards extends StatelessWidget {
   const TopCards({required this.icon, required this.label});
@@ -17,12 +18,7 @@ class TopCards extends StatelessWidget {
         SizedBox(
           height: 20.0,
         ),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 20.0,
-          ),
-        )
+        Text(label, style: kLabelStyleTop)
       ],
     );
   }
