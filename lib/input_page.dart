@@ -152,7 +152,11 @@ class _InputPageState extends State<InputPage> {
                             RoundIconButton(
                               onPressed: () {
                                 setState(() {
-                                  bmiWeight--;
+                                  if (bmiWeight != 20) {
+                                    bmiWeight--;
+                                  } else {
+                                    bmiWeight = 20;
+                                  }
                                 });
                               },
                               iconData: FontAwesomeIcons.minus,
@@ -163,7 +167,11 @@ class _InputPageState extends State<InputPage> {
                             RoundIconButton(
                                 onPressed: () {
                                   setState(() {
-                                    bmiWeight++;
+                                    if (bmiWeight != 150) {
+                                      bmiWeight++;
+                                    } else {
+                                      bmiWeight = 150;
+                                    }
                                   });
                                 },
                                 iconData: FontAwesomeIcons.plus)
@@ -195,7 +203,11 @@ class _InputPageState extends State<InputPage> {
                             RoundIconButton(
                               onPressed: () {
                                 setState(() {
-                                  bmiAge--;
+                                  if (bmiAge != 1) {
+                                    bmiAge--;
+                                  } else {
+                                    bmiAge = 1;
+                                  }
                                 });
                               },
                               iconData: FontAwesomeIcons.minus,
@@ -206,7 +218,11 @@ class _InputPageState extends State<InputPage> {
                             RoundIconButton(
                               onPressed: () {
                                 setState(() {
-                                  bmiAge++;
+                                  if (bmiAge != 100) {
+                                    bmiAge++;
+                                  } else {
+                                    bmiAge = 100;
+                                  }
                                 });
                               },
                               iconData: FontAwesomeIcons.plus,
