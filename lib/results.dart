@@ -46,7 +46,7 @@ class ResultPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Overweight',
+                    bmiResult,
                     style: TextStyle(
                       color: Color(
                         0xFF24D876,
@@ -56,14 +56,14 @@ class ResultPage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '26.7',
+                    bmiCalc,
                     style: TextStyle(
                       fontSize: 90.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    'Your BMI is low. You should eat more',
+                    bmiInterpretation,
                     style: kLabelStyleTop,
                   )
                 ],
