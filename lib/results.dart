@@ -62,9 +62,13 @@ class ResultPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    bmiInterpretation,
-                    style: kLabelStyleTop,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      bmiInterpretation,
+                      style: kLabelStyleTop,
+                      textAlign: TextAlign.center,
+                    ),
                   )
                 ],
               ),
