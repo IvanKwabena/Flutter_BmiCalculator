@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'input_page.dart';
-import 'results.dart';
+// import 'results.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => InputPage(),
-        '/first': (context) => ResultPage(),
+        // '/first': (context) => ResultPage(),
       },
     );
   }
